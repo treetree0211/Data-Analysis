@@ -121,12 +121,6 @@ def quota(a, b):
         return "(+%.2f%%)" %(((float(b)-float(a))/float(a))*100)
 
 
-# In[51]:
-
-
-quota("63","33")
-
-
 # In[10]:
 
 
@@ -160,18 +154,6 @@ n_share_list = map_list(now_name, now_share)
 n_value_list = map_list(now_name, now_value)
 
 
-# In[299]:
-
-
-aq1_share_list.head()
-
-
-# In[300]:
-
-
-aq2_share_list.head()
-
-
 # In[9]:
 
 
@@ -186,69 +168,6 @@ def cal_value(value):
         i+=1
     
     return int(result)
-
-
-# In[281]:
-
-
-cal_value(af1g_share.get(1))
-
-
-# In[284]:
-
-
-# get venture total value
-def get_total_value(orig_value):
-    
-    index1 = 1
-    value1 = 0
-    for i in orig_value:
-        value1 += cal_value(orig_value.get(index1))
-        index1 += 1
-        
-    return value1
-
-
-# In[285]:
-
-
-get_total_value(orig_value)
-
-
-# In[286]:
-
-
-get_total_value(af1g_value)
-
-
-# In[287]:
-
-
-get_total_value(af2g_value)
-
-
-# In[288]:
-
-
-get_total_value(now_value)
-
-
-# In[222]:
-
-
-sec_report = pd.concat([orig_name, orig_share, orig_value, af1g_name, af1g_share, 
-                       af1g_value, af2g_name, af2g_share, af2g_value,now_name,
-                       now_share, now_value], axis=1)
-sec_report.columns = ['Original Name', 'Original Share', 'Original Value', 
-                     'After 1 Quarter Name', 'After 1 Quarter Share', 'After 1 Quarter Value',
-                     'After 2 Quarter Name', 'After 2 Quarter Share', 'After 2 Quarter Value',
-                     'Current Name', 'Current Share', 'Current Value']
-
-
-# In[223]:
-
-
-sec_report
 
 
 # In[12]:
